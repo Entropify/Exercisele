@@ -25,7 +25,8 @@ Inspired by Countryle, Worldle, and Capitale, **Exercisele** is a browser-based 
 
 ## Contributing
 Contributions are welcome! If you want to add more exercises, improve feedback visuals, or enhance gameplay, feel free to submit a pull request.
-Made by Zhiyuan (Jerry) Jiang
+
+Made by Zhiyuan (Jerry) Jiang.
 
 ## License
 This project is licensed under the [MIT License](LICENSE).
