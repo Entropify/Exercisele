@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercisele - Gym Exercise Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏋️ Exercisele</h1>
+            <p>Guess the gym exercise! Get hints about muscle groups, equipments, and type.</p>
+            <p>Learn key information about exercises and improve your fitness knowledge!</p>
+        </header>
+
+        <div class="game-area">
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="exercise-input">Enter your guess:</label>
+                    <div class="input-container">
+                        <input type="text" id="exercise-input" placeholder="Type exercise name..." autocomplete="off">
+                        <div class="autocomplete-dropdown" id="autocomplete-dropdown">
+                            <!-- Suggestions will be dynamically added here -->
+                        </div>
+                    </div>
+                    <button id="guess-btn">Guess</button>
+                </div>
+                <div class="attempts-counter">
+                    <span>Attempts: <span id="attempts">0</span>/6</span>
+                </div>
+            </div>
+
+            <div class="feedback-section">
+                <h3>Your Guesses:</h3>
+                <div id="guesses-container">
+                    <!-- Guesses will be dynamically added here -->
+                </div>
+            </div>
+
+            <div class="tip-section" id="tip-section" style="display: none;">
+                <h3>💡 Form Tip:</h3>
+                <p id="tip-text"></p>
+            </div>
+
+            <div class="game-over" id="game-over" style="display: none;">
+                <h3 id="game-result"></h3>
+                <button id="new-game-btn">New Game</button>
+            </div>
+        </div>
+    </div>
+
+    <footer style="text-align:center; margin-top:20px; color:#ffffff; opacity:0.7; font-size:12px;">
+        Made by Zhiyuan (Jerry) Jiang, all rights reserved.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
