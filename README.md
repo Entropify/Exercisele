@@ -1,6 +1,6 @@
 # Exercisele
 
-Have you always found learning and memorizing gym exercises boring and lame?
+Have you ever found learning and memorizing new gym exercises boring tedious?
 
 Inspired by Countryle, Worldle, and Capitale, **Exercisele** is a browser-based educational guessing game where players try to identify exercises based on features like primary muscle groups, equipment, and exercise type. Each guess provides feedback on how closely it matches the target exercise, helping users learn proper form and key techniques.
 
