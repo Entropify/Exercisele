@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exercise List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container wide">
+    <header>
+      <a class="exercise-list-link" href="index.html" title="Back to game">← Back</a>
+      <h1>Exercise List</h1>
+      <p>All exercises used in the game, updated when I personally try out new exercises in the gym!</p>
+    </header>
+
+    <div class="game-area">
+      <div class="list-controls">
+        <div class="search-bar">
+          <input id="list-search-input" type="text" placeholder="Search exercises..." autocomplete="off" />
+          <div class="search-options">
+            <button id="search-options-btn" aria-haspopup="true" aria-expanded="false">Filters ▾</button>
+            <div id="search-options-menu" class="search-options-menu" role="menu" aria-hidden="true">
+              <div class="filter-sections">
+                <div class="filter-group" data-group="type">
+                  <div class="filter-title">Type</div>
+                  <div class="checkboxes" id="filter-type"></div>
+                </div>
+                <div class="filter-group" data-group="difficulty">
+                  <div class="filter-title">Difficulty</div>
+                  <div class="checkboxes" id="filter-difficulty"></div>
+                </div>
+                <div class="filter-group" data-group="equipment">
+                  <div class="filter-title">Equipment</div>
+                  <div class="checkboxes" id="filter-equipment"></div>
+                </div>
+                <div class="filter-group" data-group="muscles">
+                  <div class="filter-title">Muscles Worked</div>
+                  <div class="checkboxes" id="filter-muscles"></div>
+                </div>
+              </div>
+              <div class="filters-actions">
+                <button id="clear-filters-btn" class="clear-filters-btn" type="button">Clear Filters</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="table-wrapper">
+        <table class="exercise-table" id="exercise-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Muscles Worked</th>
+              <th>Equipment</th>
+              <th>Type</th>
+              <th>Difficulty</th>
+              <th>Youtube Video Demo</th>
+              <th>Form Tip</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Rows inserted by script -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <footer style="text-align:center; margin-top:20px; color:#ffffff; opacity:0.7; font-size:12px;">
+    Made by Zhiyuan (Jerry) Jiang, all rights reserved.
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function() {
+      if (!window.exercises || !Array.isArray(window.exercises)) return;
+
+      const input = document.getElementById('list-search-input');
+      const optionsBtn = document.getElementById('search-options-btn');
+      const optionsMenu = document.getElementById('search-options-menu');
+      const filterType = document.getElementById('filter-type');
+      const filterDifficulty = document.getElementById('filter-difficulty');
+  const filterMuscles = document.getElementById('filter-muscles');
+  const filterEquipment = document.getElementById('filter-equipment');
+      const clearBtn = document.getElementById('clear-filters-btn');
+      const tbody = document.querySelector('#exercise-table tbody');
+
+      let query = '';
+      const selected = {
+        type: new Set(),
+        difficulty: new Set(),
+        equipment: new Set(),
+        muscles: new Set(),
+      };
+
+      function renderTable(rowsData) {
+        tbody.innerHTML = '';
+        rowsData
+          .slice()
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .forEach(ex => {
+            const tr = document.createElement('tr');
+            const muscles = (ex.primaryMuscles || []).join(', ');
+            tr.innerHTML = `
+              <td>${ex.name}</td>
+              <td>${muscles}</td>
+              <td>${ex.equipment}</td>
+              <td>${ex.type}</td>
+              <td>${ex.difficulty}</td>
+              <td>${ex.youtube ? `<a href="${ex.youtube}" target="_blank" rel="noopener">Watch</a>` : ''}</td>
+              <td>${ex.tip}</td>
+            `;
+            tbody.appendChild(tr);
+          });
+      }
+
+      function filterData(data, q) {
+        let result = data;
+        const ql = (q || '').toLowerCase().trim();
+        if (ql) {
+          result = result.filter(ex => String(ex.name).toLowerCase().includes(ql));
+        }
+        if (selected.type.size > 0) {
+          result = result.filter(ex => selected.type.has(String(ex.type)));
+        }
+        if (selected.difficulty.size > 0) {
+          result = result.filter(ex => selected.difficulty.has(String(ex.difficulty)));
+        }
+        if (selected.equipment.size > 0) {
+          result = result.filter(ex => selected.equipment.has(String(ex.equipment)));
+        }
+        if (selected.muscles.size > 0) {
+          result = result.filter(ex => (ex.primaryMuscles || []).some(m => selected.muscles.has(m)));
+        }
+        return result;
+      }
+
+      function update() {
+        const filtered = filterData(window.exercises, query);
+        renderTable(filtered);
+      }
+
+      function unique(array) {
+        return Array.from(new Set(array));
+      }
+
+      function populateFilters() {
+        // Types
+        const types = unique(window.exercises.map(e => String(e.type))).sort();
+        filterType.innerHTML = '';
+        types.forEach(val => {
+          const id = `type-${val}`;
+          const lbl = document.createElement('label');
+          lbl.className = 'checkbox-item';
+          lbl.innerHTML = `<input type="checkbox" value="${val}" id="${id}"> ${val}`;
+          lbl.querySelector('input').addEventListener('change', (e) => {
+            if (e.target.checked) selected.type.add(val); else selected.type.delete(val);
+            update();
+          });
+          filterType.appendChild(lbl);
+        });
+
+        // Difficulty
+        const diffs = unique(window.exercises.map(e => String(e.difficulty))).sort();
+        filterDifficulty.innerHTML = '';
+        diffs.forEach(val => {
+          const id = `difficulty-${val}`;
+          const lbl = document.createElement('label');
+          lbl.className = 'checkbox-item';
+          lbl.innerHTML = `<input type="checkbox" value="${val}" id="${id}"> ${val}`;
+          lbl.querySelector('input').addEventListener('change', (e) => {
+            if (e.target.checked) selected.difficulty.add(val); else selected.difficulty.delete(val);
+            update();
+          });
+          filterDifficulty.appendChild(lbl);
+        });
+
+        // Equipment
+        const equipments = unique(window.exercises.map(e => String(e.equipment))).sort();
+        filterEquipment.innerHTML = '';
+        equipments.forEach(val => {
+          const id = `equipment-${val}`;
+          const lbl = document.createElement('label');
+          lbl.className = 'checkbox-item';
+          lbl.innerHTML = `<input type=\"checkbox\" value=\"${val}\" id=\"${id}\"> ${val}`;
+          lbl.querySelector('input').addEventListener('change', (e) => {
+            if (e.target.checked) selected.equipment.add(val); else selected.equipment.delete(val);
+            update();
+          });
+          filterEquipment.appendChild(lbl);
+        });
+
+        // Muscles
+        const muscles = unique(window.exercises.flatMap(e => e.primaryMuscles || [])).sort((a,b)=>a.localeCompare(b));
+        filterMuscles.innerHTML = '';
+        muscles.forEach(val => {
+          const id = `muscle-${val.replace(/\s+/g,'-')}`;
+          const lbl = document.createElement('label');
+          lbl.className = 'checkbox-item';
+          lbl.innerHTML = `<input type="checkbox" value="${val}" id="${id}"> ${val}`;
+          lbl.querySelector('input').addEventListener('change', (e) => {
+            if (e.target.checked) selected.muscles.add(val); else selected.muscles.delete(val);
+            update();
+          });
+          filterMuscles.appendChild(lbl);
+        });
+      }
+
+      // Initialize
+      populateFilters();
+      renderTable(window.exercises);
+      input.placeholder = 'Search exercises by name...';
+
+      // Search input
+      input.addEventListener('input', (e) => {
+        query = e.target.value || '';
+        update();
+      });
+
+      // Options dropdown toggle
+      optionsBtn.addEventListener('click', () => {
+        const open = optionsMenu.getAttribute('aria-hidden') === 'false';
+        optionsMenu.setAttribute('aria-hidden', String(open));
+        optionsBtn.setAttribute('aria-expanded', String(!open));
+        if (!open) {
+          optionsMenu.style.display = 'block';
+        } else {
+          optionsMenu.style.display = 'none';
+        }
+      });
+
+      // Close menu on outside click
+      document.addEventListener('click', (e) => {
+        if (!optionsMenu.contains(e.target) && e.target !== optionsBtn) {
+          optionsMenu.style.display = 'none';
+          optionsMenu.setAttribute('aria-hidden', 'true');
+          optionsBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+
+      // Clear filters
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        query = '';
+        selected.type.clear();
+        selected.difficulty.clear();
+        selected.equipment.clear();
+        selected.muscles.clear();
+        // Uncheck all checkboxes
+        optionsMenu.querySelectorAll('.checkbox-item input[type="checkbox"]').forEach(cb => {
+          cb.checked = false;
+        });
+        update();
+      });
+    })();
+  </script>
+</body>
+</html>
