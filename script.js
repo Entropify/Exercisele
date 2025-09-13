@@ -7,7 +7,8 @@ const exercises = [
         equipment: "barbell",
         type: "compound",
         difficulty: "medium",
-        tip: "Keep your feet flat on the floor, retract your shoulder blades, and lower the bar to your chest with control."
+        tip: "Keep your feet flat on the floor, retract your shoulder blades, and lower the bar to your chest with control.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "squat",
@@ -15,7 +16,8 @@ const exercises = [
         equipment: "barbell",
         type: "compound",
         difficulty: "medium",
-        tip: "Keep your chest up, knees tracking over toes, and descend until thighs are parallel to the floor."
+        tip: "Keep your chest up, knees tracking over toes, and descend until thighs are parallel to the floor.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "deadlift",
@@ -23,7 +25,8 @@ const exercises = [
         equipment: "barbell",
         type: "compound",
         difficulty: "hard",
-        tip: "Keep the bar close to your body, maintain a neutral spine, and drive through your heels."
+        tip: "Keep the bar close to your body, maintain a neutral spine, and drive through your heels.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "overhead press",
@@ -31,7 +34,8 @@ const exercises = [
         equipment: "barbell",
         type: "compound",
         difficulty: "medium",
-        tip: "Keep your core tight, press straight up overhead, and avoid arching your back excessively."
+        tip: "Keep your core tight, press straight up overhead, and avoid arching your back excessively.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "romanian deadlift",
@@ -39,7 +43,8 @@ const exercises = [
         equipment: "barbell",
         type: "compound",
         difficulty: "medium",
-        tip: "Keep legs relatively straight, hinge at the hips, and lower the bar along your legs while feeling the hamstring stretch."
+        tip: "Keep legs relatively straight, hinge at the hips, and lower the bar along your legs while feeling the hamstring stretch.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "barbell row",
@@ -47,7 +52,8 @@ const exercises = [
         equipment: "barbell",
         type: "compound",
         difficulty: "medium",
-        tip: "Keep your chest up, pull the bar to your lower chest, and squeeze your shoulder blades together."
+        tip: "Keep your chest up, pull the bar to your lower chest, and squeeze your shoulder blades together.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "front squat",
@@ -55,7 +61,8 @@ const exercises = [
         equipment: "barbell",
         type: "compound",
         difficulty: "hard",
-        tip: "Rest the bar on your front delts, keep your elbows high, and maintain an upright torso throughout the movement."
+        tip: "Rest the bar on your front delts, keep your elbows high, and maintain an upright torso throughout the movement.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "barbell curl",
@@ -63,7 +70,8 @@ const exercises = [
         equipment: "barbell",
         type: "isolation",
         difficulty: "easy",
-        tip: "Keep your elbows stationary, curl the bar up with control, and squeeze your biceps at the top."
+        tip: "Keep your elbows stationary, curl the bar up with control, and squeeze your biceps at the top.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "close grip bench press",
@@ -71,7 +79,8 @@ const exercises = [
         equipment: "barbell",
         type: "compound",
         difficulty: "medium",
-        tip: "Use a narrow grip, keep your elbows close to your body, and focus on tricep activation."
+        tip: "Use a narrow grip, keep your elbows close to your body, and focus on tricep activation.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "barbell hip thrust",
@@ -79,7 +88,8 @@ const exercises = [
         equipment: "barbell",
         type: "compound",
         difficulty: "medium",
-        tip: "Drive your hips up by squeezing your glutes, keep your core tight, and pause at the top."
+        tip: "Drive your hips up by squeezing your glutes, keep your core tight, and pause at the top.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
 
     // Dumbbell Exercises
@@ -89,7 +99,8 @@ const exercises = [
         equipment: "dumbbell",
         type: "isolation",
         difficulty: "easy",
-        tip: "Keep your elbows stationary, curl the weight up with control, and squeeze at the top."
+        tip: "Keep your elbows stationary, curl the weight up with control, and squeeze at the top.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "shoulder press",
@@ -97,7 +108,8 @@ const exercises = [
         equipment: "dumbbell",
         type: "compound",
         difficulty: "medium",
-        tip: "Start with weights at shoulder level, press straight up overhead, and lower with control."
+        tip: "Start with weights at shoulder level, press straight up overhead, and lower with control.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "chest fly",
@@ -105,7 +117,8 @@ const exercises = [
         equipment: "dumbbell",
         type: "isolation",
         difficulty: "easy",
-        tip: "Keep a slight bend in your elbows, bring weights together in front of your chest, and feel the stretch."
+        tip: "Keep a slight bend in your elbows, bring weights together in front of your chest, and feel the stretch.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "tricep extension",
@@ -113,7 +126,8 @@ const exercises = [
         equipment: "dumbbell",
         type: "isolation",
         difficulty: "easy",
-        tip: "Keep your elbows stationary, extend your arms overhead, and feel the stretch in your triceps."
+        tip: "Keep your elbows stationary, extend your arms overhead, and feel the stretch in your triceps.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "dumbbell row",
@@ -121,7 +135,8 @@ const exercises = [
         equipment: "dumbbell",
         type: "compound",
         difficulty: "easy",
-        tip: "Keep your back straight, pull the weight to your hip, and squeeze your shoulder blade."
+        tip: "Keep your back straight, pull the weight to your hip, and squeeze your shoulder blade.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "dumbbell bench press",
@@ -129,7 +144,8 @@ const exercises = [
         equipment: "dumbbell",
         type: "compound",
         difficulty: "medium",
-        tip: "Control the weights down to your chest, press up with both arms simultaneously, and maintain stability."
+        tip: "Control the weights down to your chest, press up with both arms simultaneously, and maintain stability.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "dumbbell squat",
@@ -137,7 +153,8 @@ const exercises = [
         equipment: "dumbbell",
         type: "compound",
         difficulty: "easy",
-        tip: "Hold dumbbells at shoulder level, keep your chest up, and squat down until thighs are parallel."
+        tip: "Hold dumbbells at shoulder level, keep your chest up, and squat down until thighs are parallel.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "lateral raise",
@@ -145,7 +162,8 @@ const exercises = [
         equipment: "dumbbell",
         type: "isolation",
         difficulty: "easy",
-        tip: "Raise weights out to the sides until arms are parallel to the floor, control the descent."
+        tip: "Raise weights out to the sides until arms are parallel to the floor, control the descent.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "hammer curl",
@@ -153,7 +171,8 @@ const exercises = [
         equipment: "dumbbell",
         type: "isolation",
         difficulty: "easy",
-        tip: "Keep palms facing each other throughout the movement, curl up with control."
+        tip: "Keep palms facing each other throughout the movement, curl up with control.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "dumbbell lunges",
@@ -161,7 +180,8 @@ const exercises = [
         equipment: "dumbbell",
         type: "compound",
         difficulty: "medium",
-        tip: "Hold dumbbells at your sides, step forward into a lunge, and push back to starting position."
+        tip: "Hold dumbbells at your sides, step forward into a lunge, and push back to starting position.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
 
     // Machine Exercises
@@ -171,7 +191,8 @@ const exercises = [
         equipment: "machine",
         type: "compound",
         difficulty: "easy",
-        tip: "Pull the bar to your upper chest, squeeze your shoulder blades together, and control the weight on the way up."
+        tip: "Pull the bar to your upper chest, squeeze your shoulder blades together, and control the weight on the way up.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "leg press",
@@ -179,7 +200,8 @@ const exercises = [
         equipment: "machine",
         type: "compound",
         difficulty: "easy",
-        tip: "Keep your feet shoulder-width apart, lower until knees reach 90 degrees, and drive through your heels."
+        tip: "Keep your feet shoulder-width apart, lower until knees reach 90 degrees, and drive through your heels.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "chest press machine",
@@ -187,7 +209,8 @@ const exercises = [
         equipment: "machine",
         type: "compound",
         difficulty: "easy",
-        tip: "Keep your back flat against the pad, press handles forward with control, and squeeze your chest."
+        tip: "Keep your back flat against the pad, press handles forward with control, and squeeze your chest.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "seated row",
@@ -195,7 +218,8 @@ const exercises = [
         equipment: "machine",
         type: "compound",
         difficulty: "easy",
-        tip: "Pull handles to your chest, squeeze your shoulder blades together, and maintain good posture."
+        tip: "Pull handles to your chest, squeeze your shoulder blades together, and maintain good posture.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "leg extension",
@@ -203,7 +227,8 @@ const exercises = [
         equipment: "machine",
         type: "isolation",
         difficulty: "easy",
-        tip: "Extend your legs against the resistance, squeeze your quads at the top, and control the descent."
+        tip: "Extend your legs against the resistance, squeeze your quads at the top, and control the descent.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "leg curl",
@@ -211,7 +236,8 @@ const exercises = [
         equipment: "machine",
         type: "isolation",
         difficulty: "easy",
-        tip: "Curl your heels toward your glutes, squeeze your hamstrings, and control the weight back down."
+        tip: "Curl your heels toward your glutes, squeeze your hamstrings, and control the weight back down.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "shoulder press machine",
@@ -219,7 +245,8 @@ const exercises = [
         equipment: "machine",
         type: "compound",
         difficulty: "easy",
-        tip: "Press handles overhead, keep your core tight, and avoid arching your back excessively."
+        tip: "Press handles overhead, keep your core tight, and avoid arching your back excessively.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "cable crossover",
@@ -227,7 +254,8 @@ const exercises = [
         equipment: "machine",
         type: "isolation",
         difficulty: "easy",
-        tip: "Bring cables together in front of your chest, squeeze your chest muscles, and control the stretch."
+        tip: "Bring cables together in front of your chest, squeeze your chest muscles, and control the stretch.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "cable row",
@@ -235,7 +263,8 @@ const exercises = [
         equipment: "machine",
         type: "compound",
         difficulty: "easy",
-        tip: "Pull cable to your chest, squeeze your shoulder blades together, and maintain a straight back."
+        tip: "Pull cable to your chest, squeeze your shoulder blades together, and maintain a straight back.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "cable tricep pushdown",
@@ -243,7 +272,8 @@ const exercises = [
         equipment: "machine",
         type: "isolation",
         difficulty: "easy",
-        tip: "Keep your elbows stationary, push the cable down until arms are fully extended, and control the return."
+        tip: "Keep your elbows stationary, push the cable down until arms are fully extended, and control the return.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
 
     // Bodyweight Exercises
@@ -253,7 +283,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "compound",
         difficulty: "easy",
-        tip: "Keep your body straight, hands slightly wider than shoulders, and lower until chest nearly touches the floor."
+        tip: "Keep your body straight, hands slightly wider than shoulders, and lower until chest nearly touches the floor.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "pull up",
@@ -261,7 +292,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "compound",
         difficulty: "hard",
-        tip: "Start from a dead hang, pull yourself up until chin clears the bar, and lower with control."
+        tip: "Start from a dead hang, pull yourself up until chin clears the bar, and lower with control.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "lunges",
@@ -269,7 +301,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "compound",
         difficulty: "medium",
-        tip: "Step forward into a lunge position, keep your front knee over your ankle, and push back to starting position."
+        tip: "Step forward into a lunge position, keep your front knee over your ankle, and push back to starting position.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "plank",
@@ -277,7 +310,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "isolation",
         difficulty: "easy",
-        tip: "Keep your body straight from head to heels, engage your core, and breathe normally while holding the position."
+        tip: "Keep your body straight from head to heels, engage your core, and breathe normally while holding the position.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "burpees",
@@ -285,7 +319,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "compound",
         difficulty: "hard",
-        tip: "Start standing, drop to push-up position, do a push-up, jump feet to hands, then jump up with arms overhead."
+        tip: "Start standing, drop to push-up position, do a push-up, jump feet to hands, then jump up with arms overhead.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "mountain climbers",
@@ -293,7 +328,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "compound",
         difficulty: "medium",
-        tip: "Start in plank position, alternate bringing knees to chest rapidly while maintaining plank form."
+        tip: "Start in plank position, alternate bringing knees to chest rapidly while maintaining plank form.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "jumping jacks",
@@ -301,7 +337,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "compound",
         difficulty: "easy",
-        tip: "Jump feet apart while raising arms overhead, then jump back to starting position."
+        tip: "Jump feet apart while raising arms overhead, then jump back to starting position.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "wall sit",
@@ -309,7 +346,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "isolation",
         difficulty: "medium",
-        tip: "Slide down wall until thighs are parallel to floor, hold position with back flat against wall."
+        tip: "Slide down wall until thighs are parallel to floor, hold position with back flat against wall.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "dips",
@@ -317,7 +355,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "compound",
         difficulty: "hard",
-        tip: "Lower your body by bending elbows, keep chest up, and push back up to starting position."
+        tip: "Lower your body by bending elbows, keep chest up, and push back up to starting position.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "pike push up",
@@ -325,7 +364,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "compound",
         difficulty: "hard",
-        tip: "Start in downward dog position, lower head toward hands, and push back up."
+        tip: "Start in downward dog position, lower head toward hands, and push back up.",
+    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     },
     {
         name: "single leg glute bridge",
@@ -333,7 +373,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "isolation",
         difficulty: "medium",
-        tip: "Lift one leg up, drive through the heel of the planted foot, and squeeze your glutes at the top."
+        tip: "Lift one leg up, drive through the heel of the planted foot, and squeeze your glutes at the top.",
+        youtube: "https://www.youtube.com/shorts/J-Zi-sMb3qA"
     },
     {
         name: "russian twists",
@@ -341,7 +382,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "isolation",
         difficulty: "easy",
-        tip: "Sit with knees bent, lean back slightly, and rotate your torso side to side while keeping feet off ground."
+        tip: "Sit with knees bent, lean back slightly, and rotate your torso side to side while keeping feet off ground.",
+        youtube: "https://www.youtube.com/shorts/J-Zi-sMb3qA"
     },
     {
         name: "bear crawl",
@@ -349,7 +391,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "compound",
         difficulty: "medium",
-        tip: "Start on hands and knees, lift knees slightly off ground, and crawl forward maintaining this position."
+        tip: "Start on hands and knees, lift knees slightly off ground, and crawl forward maintaining this position.",
+        youtube: "https://www.youtube.com/shorts/J-Zi-sMb3qA"
     },
     {
         name: "handstand push up",
@@ -357,7 +400,8 @@ const exercises = [
         equipment: "bodyweight",
         type: "compound",
         difficulty: "hard",
-        tip: "Start in handstand position against wall, lower head toward ground, and push back up."
+        tip: "Start in handstand position against wall, lower head toward ground, and push back up.",
+        youtube: "https://www.youtube.com/shorts/J-Zi-sMb3qA"
     },
     {
         name: "pistol squat",
@@ -365,15 +409,22 @@ const exercises = [
         equipment: "bodyweight",
         type: "compound",
         difficulty: "hard",
-        tip: "Stand on one leg, extend other leg forward, and squat down on single leg while keeping extended leg off ground."
+        tip: "Stand on one leg, extend other leg forward, and squat down on single leg while keeping extended leg off ground.",
+        youtube: "https://www.youtube.com/shorts/J-Zi-sMb3qA"
     }
 ];
+
+// Expose exercises globally for other pages like list.html
+if (typeof window !== 'undefined') {
+    window.exercises = exercises;
+}
 
 // Game state
 let targetExercise = null;
 let attempts = 0;
 let maxAttempts = 6;
 let gameOver = false;
+let guessedNames = new Set();
 
 // DOM elements
 const exerciseInput = document.getElementById('exercise-input');
@@ -383,6 +434,7 @@ const attemptsDisplay = document.getElementById('attempts');
 const guessesContainer = document.getElementById('guesses-container');
 const tipSection = document.getElementById('tip-section');
 const tipText = document.getElementById('tip-text');
+const tipVideoLink = document.getElementById('tip-video-link');
 const gameOverSection = document.getElementById('game-over');
 const gameResult = document.getElementById('game-result');
 const newGameBtn = document.getElementById('new-game-btn');
@@ -436,11 +488,20 @@ function highlightSuggestion(index) {
 
 // Initialize game
 function initGame() {
+    if (!exerciseInput || !guessBtn || !attemptsDisplay || !guessesContainer || !tipSection || !gameOverSection) {
+        return;
+    }
+    
     targetExercise = exercises[Math.floor(Math.random() * exercises.length)];
     attempts = 0;
     gameOver = false;
+    guessedNames = new Set();
     guessesContainer.innerHTML = '';
     tipSection.style.display = 'none';
+    if (tipVideoLink) {
+        tipVideoLink.style.display = 'none';
+        tipVideoLink.href = '#';
+    }
     gameOverSection.style.display = 'none';
     exerciseInput.value = '';
     exerciseInput.disabled = false;
@@ -536,9 +597,8 @@ function getTypeMatch(guessType, targetType) {
         return { status: 'exact', text: `Correct: ${targetType}` };
     }
     
-    // Provide "not" hint
-    const oppositeType = targetType === 'compound' ? 'isolation' : 'compound';
-    return { status: 'none', text: `Not ${oppositeType}` };
+    // Provide "not" hint mirroring equipment style: say not the guessed type
+    return { status: 'none', text: `Not ${guessType}` };
 }
 
 // Get difficulty comparison
@@ -578,8 +638,11 @@ function createGuessElement(guessExercise) {
     const muscleHints = getMuscleGroupHints(guessExercise.primaryMuscles, targetExercise.primaryMuscles);
     const equipmentMatch = getEquipmentMatch(guessExercise.equipment, targetExercise.equipment);
     const typeMatch = getTypeMatch(guessExercise.type, targetExercise.type);
-    
     const isCorrect = guessExercise.name.toLowerCase() === targetExercise.name.toLowerCase();
+    const difficultyHint = isCorrect
+        ? { status: 'exact', text: `Correct: ${targetExercise.difficulty}` }
+        : { status: 'none', text: `Not ${guessExercise.difficulty}` };
+    
     
     const guessElement = document.createElement('div');
     guessElement.className = 'guess-item';
@@ -622,6 +685,16 @@ function createGuessElement(guessExercise) {
                 </div>
                 <div class="feedback-text">${typeMatch.text}</div>
             </div>
+
+            <div class="feedback-item">
+                <div class="feedback-label">
+                    <span class="hint-icon ${difficultyHint.status === 'exact' ? 'correct' : 'incorrect'}">
+                        ${getMatchIcon(difficultyHint.status)}
+                    </span>
+                    Difficulty
+                </div>
+                <div class="feedback-text">${difficultyHint.text}</div>
+            </div>
         </div>
     `;
     
@@ -634,6 +707,15 @@ function handleGuess() {
     
     const guessName = exerciseInput.value.trim();
     if (!guessName) return;
+
+    // Prevent duplicate guesses (case-insensitive)
+    const normalized = guessName.toLowerCase();
+    if (guessedNames.has(normalized)) {
+        alert('You already guessed that exercise. Try a different one.');
+        exerciseInput.value = '';
+        autocompleteDropdown.style.display = 'none';
+        return;
+    }
     
     const guessExercise = findExercise(guessName);
     if (!guessExercise) {
@@ -644,6 +726,7 @@ function handleGuess() {
     // Add guess to container
     const guessElement = createGuessElement(guessExercise);
     guessesContainer.appendChild(guessElement);
+    guessedNames.add(normalized);
     
     attempts++;
     updateAttemptsDisplay();
@@ -653,6 +736,11 @@ function handleGuess() {
         gameOver = true;
         tipText.textContent = targetExercise.tip;
         tipSection.style.display = 'block';
+        if (tipVideoLink) {
+            const url = (targetExercise.youtube || '').trim();
+            tipVideoLink.style.display = url ? 'inline' : 'none';
+            if (url) tipVideoLink.href = url;
+        }
         gameResult.textContent = `Congratulations! You guessed it in ${attempts} attempt${attempts === 1 ? '' : 's'}!`;
         gameOverSection.style.display = 'block';
         exerciseInput.disabled = true;
@@ -661,6 +749,11 @@ function handleGuess() {
         gameOver = true;
         tipText.textContent = targetExercise.tip;
         tipSection.style.display = 'block';
+        if (tipVideoLink) {
+            const url = (targetExercise.youtube || '').trim();
+            tipVideoLink.style.display = url ? 'inline' : 'none';
+            if (url) tipVideoLink.href = url;
+        }
         gameResult.textContent = `Game Over! The exercise was: ${targetExercise.name}`;
         gameOverSection.style.display = 'block';
         exerciseInput.disabled = true;
@@ -671,53 +764,81 @@ function handleGuess() {
     autocompleteDropdown.style.display = 'none';
 }
 
-// Event listeners
-guessBtn.addEventListener('click', handleGuess);
+// Event listeners (guarded for non-game pages)
+if (guessBtn) {
+    guessBtn.addEventListener('click', handleGuess);
+}
 
-exerciseInput.addEventListener('input', (e) => {
-    const query = e.target.value;
-    const suggestions = filterExercises(query);
-    showSuggestions(suggestions);
-    selectedIndex = -1;
-});
+if (exerciseInput) {
+    exerciseInput.addEventListener('input', (e) => {
+        const query = e.target.value;
+        const suggestions = filterExercises(query);
+        showSuggestions(suggestions);
+        selectedIndex = -1;
+    });
 
-exerciseInput.addEventListener('keydown', (e) => {
-    if (autocompleteDropdown.style.display === 'none') return;
-    
-    switch (e.key) {
-        case 'ArrowDown':
+    // Show all options when focusing/clicking an empty input
+    function showAllOptionsIfEmpty() {
+        if (!exerciseInput.value.trim()) {
+            const all = [...exercises].sort((a, b) => a.name.localeCompare(b.name));
+            showSuggestions(all);
+            selectedIndex = -1;
+        }
+    }
+
+    exerciseInput.addEventListener('focus', showAllOptionsIfEmpty);
+    exerciseInput.addEventListener('click', showAllOptionsIfEmpty);
+
+    exerciseInput.addEventListener('keydown', (e) => {
+        const dropdownOpen = autocompleteDropdown.style.display !== 'none';
+
+        if (e.key === 'Enter') {
             e.preventDefault();
-            selectedIndex = Math.min(selectedIndex + 1, currentSuggestions.length - 1);
-            highlightSuggestion(selectedIndex);
-            break;
-        case 'ArrowUp':
-            e.preventDefault();
-            selectedIndex = Math.max(selectedIndex - 1, -1);
-            highlightSuggestion(selectedIndex);
-            break;
-        case 'Enter':
-            e.preventDefault();
-            if (selectedIndex >= 0 && currentSuggestions[selectedIndex]) {
+            if (dropdownOpen && selectedIndex >= 0 && currentSuggestions[selectedIndex]) {
                 selectExercise(currentSuggestions[selectedIndex].name);
             } else {
                 handleGuess();
             }
-            break;
-        case 'Escape':
+            return;
+        }
+
+        if (!dropdownOpen) return;
+
+        switch (e.key) {
+            case 'ArrowDown':
+                e.preventDefault();
+                selectedIndex = Math.min(selectedIndex + 1, currentSuggestions.length - 1);
+                highlightSuggestion(selectedIndex);
+                break;
+            case 'ArrowUp':
+                e.preventDefault();
+                selectedIndex = Math.max(selectedIndex - 1, -1);
+                highlightSuggestion(selectedIndex);
+                break;
+            case 'Escape':
+                autocompleteDropdown.style.display = 'none';
+                selectedIndex = -1;
+                break;
+        }
+    });
+
+    exerciseInput.addEventListener('blur', () => {
+        // Delay hiding dropdown to allow clicking on suggestions
+        setTimeout(() => {
             autocompleteDropdown.style.display = 'none';
-            selectedIndex = -1;
-            break;
-    }
-});
+        }, 200);
+    });
+}
 
-exerciseInput.addEventListener('blur', () => {
-    // Delay hiding dropdown to allow clicking on suggestions
-    setTimeout(() => {
-        autocompleteDropdown.style.display = 'none';
-    }, 200);
-});
+if (newGameBtn) {
+    newGameBtn.addEventListener('click', initGame);
+}
 
-newGameBtn.addEventListener('click', initGame);
-
-// Initialize the game when page loads
-document.addEventListener('DOMContentLoaded', initGame);
+// Initialize only on pages with game UI
+if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', () => {
+        if (exerciseInput && guessBtn && attemptsDisplay && guessesContainer) {
+            initGame();
+        }
+    });
+}

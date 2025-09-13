@@ -9,8 +9,9 @@
 <body>
     <div class="container">
         <header>
+            <a class="exercise-list-link" href="list.html" title="View all exercises">Exercise List</a>
             <h1>🏋️ Exercisele</h1>
-            <p>Guess the gym exercise! Get hints about muscle groups, equipments, and type.</p>
+            <p>Guess the gym exercise! Get hints about muscle groups, equipment, and type.</p>
             <p>Learn key information about exercises and improve your fitness knowledge!</p>
         </header>
 
@@ -40,7 +41,10 @@
 
             <div class="tip-section" id="tip-section" style="display: none;">
                 <h3>💡 Form Tip:</h3>
-                <p id="tip-text"></p>
+                <div id="tip-content" style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+                    <p id="tip-text" style="margin:0;"></p>
+                    <a id="tip-video-link" href="#" target="_blank" rel="noopener noreferrer" style="display:none; color:#90e0ff; text-decoration:underline;">Watch Demo</a>
+                </div>
             </div>
 
             <div class="game-over" id="game-over" style="display: none;">
