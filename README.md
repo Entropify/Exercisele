@@ -6,10 +6,11 @@ Have you ever found learning and memorizing new gym exercises boring and tedious
 Inspired by Countryle, Worldle, and Capitale, **Exercisele** is a browser-based educational guessing game where players try to identify exercises based on features like primary muscle groups, equipment, and exercise type. Each guess provides feedback on how closely it matches the target exercise, helping users learn proper form and key techniques.
 This project is an ongoing passion project where I will periodically add new gym exercises I have personally learned in the gym as well as new features and UX improvements.
 
-## Update 1.01.5 (Youtube Placeholder Links Removal)
+## Update 1.01.5 (Youtube Link & Difficulty Imrpovement)
 - Updated Youtube tutorial links for each appropriate exercise (all 42 exercises so far, new ones will be added as I learn more exercises)
+- Updated difficulty rating for some of the exercises previously with inaccurate ratings
 
-## Update 1.01 (Exercise List and UX Improvements)
+## Update 1.01 (Exercise List & UX Improvements)
 - Added a separate page with all the exercises in the database used in the game
 - Added a search bar & search filter to the list page, supporting multi-filter search
 - Added a value "youtube" to all the objects in the exercises array, such that each exercise has its own attributed Youtube link (Youtube links are placeholders for now, will be updated with the appropriate video later down the line)
