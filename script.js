@@ -24,7 +24,7 @@ const exercises = [
         primaryMuscles: ["hamstrings", "glutes", "lower back"],
         equipment: "barbell",
         type: "compound",
-        difficulty: "hard",
+        difficulty: "medium",
         tip: "Keep the bar close to your body, maintain a neutral spine, and drive through your heels.",
     youtube: "https://www.youtube.com/watch?v=-4qRntuXBSc"
     },
@@ -42,7 +42,7 @@ const exercises = [
         primaryMuscles: ["hamstrings", "glutes"],
         equipment: "barbell",
         type: "compound",
-        difficulty: "medium",
+        difficulty: "hard",
         tip: "Keep legs relatively straight, hinge at the hips, and lower the bar along your legs while feeling the hamstring stretch.",
     youtube: "https://www.youtube.com/watch?v=3VXmecChYYM"
     },
@@ -78,7 +78,7 @@ const exercises = [
         primaryMuscles: ["triceps", "chest"],
         equipment: "barbell",
         type: "compound",
-        difficulty: "medium",
+        difficulty: "hard",
         tip: "Use a narrow grip, keep your elbows close to your body, and focus on tricep activation.",
     youtube: "https://www.youtube.com/watch?v=OYoc93qAAEY"
     },
@@ -87,7 +87,7 @@ const exercises = [
         primaryMuscles: ["glutes", "hamstrings"],
         equipment: "barbell",
         type: "compound",
-        difficulty: "medium",
+        difficulty: "easy",
         tip: "Drive your hips up by squeezing your glutes, keep your core tight, and pause at the top.",
     youtube: "https://www.youtube.com/watch?v=pUdIL5x0fWg"
     },
@@ -161,7 +161,7 @@ const exercises = [
         primaryMuscles: ["shoulders"],
         equipment: "dumbbell",
         type: "isolation",
-        difficulty: "easy",
+        difficulty: "hard",
         tip: "Raise weights out to the sides until arms are parallel to the floor, control the descent.",
     youtube: "https://www.youtube.com/watch?v=3VcKaXpzqRo"
     },
@@ -170,7 +170,7 @@ const exercises = [
         primaryMuscles: ["biceps", "forearms"],
         equipment: "dumbbell",
         type: "isolation",
-        difficulty: "easy",
+        difficulty: "medium",
         tip: "Keep palms facing each other throughout the movement, curl up with control.",
     youtube: "https://www.youtube.com/watch?v=BRVDS6HVR9Q"
     },
@@ -179,7 +179,7 @@ const exercises = [
         primaryMuscles: ["quadriceps", "glutes", "hamstrings"],
         equipment: "dumbbell",
         type: "compound",
-        difficulty: "medium",
+        difficulty: "easy",
         tip: "Hold dumbbells at your sides, step forward into a lunge, and push back to starting position.",
     youtube: "https://www.youtube.com/watch?v=3TM-vVWuLYE"
     },
@@ -190,7 +190,7 @@ const exercises = [
         primaryMuscles: ["lats", "biceps", "rhomboids"],
         equipment: "machine",
         type: "compound",
-        difficulty: "easy",
+        difficulty: "medium",
         tip: "Pull the bar to your upper chest, squeeze your shoulder blades together, and control the weight on the way up.",
     youtube: "https://www.youtube.com/watch?v=O-_EOo6IY3U"
     },
@@ -199,8 +199,8 @@ const exercises = [
         primaryMuscles: ["quadriceps", "glutes"],
         equipment: "machine",
         type: "compound",
-        difficulty: "easy",
-        tip: "Keep your feet shoulder-width apart, lower until knees reach 90 degrees, and drive through your heels.",
+        difficulty: "medium",
+        tip: "Keep your feet shoulder-width apart, lower until knees reach 90 degrees, and drive through your heels. Ensure knees never lock.",
     youtube: "https://www.youtube.com/watch?v=p5dCqF7wWUw"
     },
     {
@@ -208,7 +208,7 @@ const exercises = [
         primaryMuscles: ["chest", "triceps", "shoulders"],
         equipment: "machine",
         type: "compound",
-        difficulty: "easy",
+        difficulty: "medium",
         tip: "Keep your back flat against the pad, press handles forward with control, and squeeze your chest.",
     youtube: "https://www.youtube.com/watch?v=EeRz0yzXUvk"
     },
@@ -217,7 +217,7 @@ const exercises = [
         primaryMuscles: ["lats", "rhomboids", "biceps"],
         equipment: "machine",
         type: "compound",
-        difficulty: "easy",
+        difficulty: "medium",
         tip: "Pull handles to your chest, squeeze your shoulder blades together, and maintain good posture.",
     youtube: "https://www.youtube.com/watch?v=Gv_SmIQo794"
     },
@@ -235,7 +235,7 @@ const exercises = [
         primaryMuscles: ["hamstrings"],
         equipment: "machine",
         type: "isolation",
-        difficulty: "easy",
+        difficulty: "hard",
         tip: "Curl your heels toward your glutes, squeeze your hamstrings, and control the weight back down.",
     youtube: "https://www.youtube.com/watch?v=t9sTSr-JYSs"
     },
@@ -244,7 +244,7 @@ const exercises = [
         primaryMuscles: ["shoulders", "triceps"],
         equipment: "machine",
         type: "compound",
-        difficulty: "easy",
+        difficulty: "medium",
         tip: "Press handles overhead, keep your core tight, and avoid arching your back excessively.",
     youtube: "https://www.youtube.com/watch?v=uJmYpr_CPBo"
     },
@@ -253,7 +253,7 @@ const exercises = [
         primaryMuscles: ["chest"],
         equipment: "machine",
         type: "isolation",
-        difficulty: "easy",
+        difficulty: "hard",
         tip: "Bring cables together in front of your chest, squeeze your chest muscles, and control the stretch.",
     youtube: "https://www.youtube.com/watch?v=qRS3cn89gBE"
     },
@@ -282,7 +282,7 @@ const exercises = [
         primaryMuscles: ["lats", "biceps", "rhomboids"],
         equipment: "bodyweight",
         type: "compound",
-        difficulty: "hard",
+        difficulty: "medium",
         tip: "Start from a dead hang, pull yourself up until chin clears the bar, and lower with control.",
     youtube: "https://www.youtube.com/watch?v=aAggnpPyR6E"
     },
@@ -291,7 +291,7 @@ const exercises = [
         primaryMuscles: ["quadriceps", "glutes", "hamstrings"],
         equipment: "bodyweight",
         type: "compound",
-        difficulty: "medium",
+        difficulty: "easy",
         tip: "Step forward into a lunge position, keep your front knee over your ankle, and push back to starting position.",
     youtube: "https://www.youtube.com/watch?v=xoZMv_YJtkA"
     },
@@ -309,7 +309,7 @@ const exercises = [
         primaryMuscles: ["chest", "shoulders", "quadriceps", "core"],
         equipment: "bodyweight",
         type: "compound",
-        difficulty: "hard",
+        difficulty: "medium",
         tip: "Start standing, drop to push-up position, do a push-up, jump feet to hands, then jump up with arms overhead.",
     youtube: "https://www.youtube.com/watch?v=qLBImHhCXSw"
     },
@@ -336,7 +336,7 @@ const exercises = [
         primaryMuscles: ["quadriceps", "glutes"],
         equipment: "bodyweight",
         type: "isolation",
-        difficulty: "medium",
+        difficulty: "hard",
         tip: "Slide down wall until thighs are parallel to floor, hold position with back flat against wall.",
     youtube: "https://www.youtube.com/watch?v=-cdph8hv0O0"
     },
@@ -372,7 +372,7 @@ const exercises = [
         primaryMuscles: ["shoulders", "triceps"],
         equipment: "bodyweight",
         type: "compound",
-        difficulty: "hard",
+        difficulty: "medium",
         tip: "Start in handstand position against wall, lower head toward ground, and push back up.",
         youtube: "https://www.youtube.com/watch?v=WxgJS48wf1M"
     },
