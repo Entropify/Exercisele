@@ -8,7 +8,7 @@ const exercises = [
         type: "compound",
         difficulty: "medium",
         tip: "Keep your feet flat on the floor, retract your shoulder blades, and lower the bar to your chest with control.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=gRVjAtPip0Y"
     },
     {
         name: "squat",
@@ -17,7 +17,7 @@ const exercises = [
         type: "compound",
         difficulty: "medium",
         tip: "Keep your chest up, knees tracking over toes, and descend until thighs are parallel to the floor.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=Dy28eq2PjcM"
     },
     {
         name: "deadlift",
@@ -26,16 +26,16 @@ const exercises = [
         type: "compound",
         difficulty: "hard",
         tip: "Keep the bar close to your body, maintain a neutral spine, and drive through your heels.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=-4qRntuXBSc"
     },
     {
-        name: "overhead press",
+        name: "overhead barbell press",
         primaryMuscles: ["shoulders", "triceps", "core"],
         equipment: "barbell",
         type: "compound",
         difficulty: "medium",
         tip: "Keep your core tight, press straight up overhead, and avoid arching your back excessively.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=F3QY5vMz_6I"
     },
     {
         name: "romanian deadlift",
@@ -44,7 +44,7 @@ const exercises = [
         type: "compound",
         difficulty: "medium",
         tip: "Keep legs relatively straight, hinge at the hips, and lower the bar along your legs while feeling the hamstring stretch.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=3VXmecChYYM"
     },
     {
         name: "barbell row",
@@ -53,7 +53,7 @@ const exercises = [
         type: "compound",
         difficulty: "medium",
         tip: "Keep your chest up, pull the bar to your lower chest, and squeeze your shoulder blades together.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=FWJR5Ve8bnQ"
     },
     {
         name: "front squat",
@@ -62,7 +62,7 @@ const exercises = [
         type: "compound",
         difficulty: "hard",
         tip: "Rest the bar on your front delts, keep your elbows high, and maintain an upright torso throughout the movement.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=uYumuL_G_V0"
     },
     {
         name: "barbell curl",
@@ -71,7 +71,7 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Keep your elbows stationary, curl the bar up with control, and squeeze your biceps at the top.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=dDI8ClxRS04"
     },
     {
         name: "close grip bench press",
@@ -80,7 +80,7 @@ const exercises = [
         type: "compound",
         difficulty: "medium",
         tip: "Use a narrow grip, keep your elbows close to your body, and focus on tricep activation.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=OYoc93qAAEY"
     },
     {
         name: "barbell hip thrust",
@@ -89,7 +89,7 @@ const exercises = [
         type: "compound",
         difficulty: "medium",
         tip: "Drive your hips up by squeezing your glutes, keep your core tight, and pause at the top.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=pUdIL5x0fWg"
     },
 
     // Dumbbell Exercises
@@ -100,7 +100,7 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Keep your elbows stationary, curl the weight up with control, and squeeze at the top.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=Nkl8WnH6tDU"
     },
     {
         name: "shoulder press",
@@ -109,7 +109,7 @@ const exercises = [
         type: "compound",
         difficulty: "medium",
         tip: "Start with weights at shoulder level, press straight up overhead, and lower with control.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=Did01dFR3Lk"
     },
     {
         name: "chest fly",
@@ -118,7 +118,7 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Keep a slight bend in your elbows, bring weights together in front of your chest, and feel the stretch.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=QENKPHhQVi4"
     },
     {
         name: "tricep extension",
@@ -127,16 +127,16 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Keep your elbows stationary, extend your arms overhead, and feel the stretch in your triceps.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=fYqswDVbJDg"
     },
     {
-        name: "dumbbell row",
+        name: "single arm dumbbell row",
         primaryMuscles: ["lats", "rhomboids", "biceps"],
         equipment: "dumbbell",
         type: "compound",
         difficulty: "easy",
         tip: "Keep your back straight, pull the weight to your hip, and squeeze your shoulder blade.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=NH1LKh_noQo"
     },
     {
         name: "dumbbell bench press",
@@ -145,7 +145,7 @@ const exercises = [
         type: "compound",
         difficulty: "medium",
         tip: "Control the weights down to your chest, press up with both arms simultaneously, and maintain stability.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=VmB1G1K7v94"
     },
     {
         name: "dumbbell squat",
@@ -154,7 +154,7 @@ const exercises = [
         type: "compound",
         difficulty: "easy",
         tip: "Hold dumbbells at shoulder level, keep your chest up, and squat down until thighs are parallel.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/shorts/_-_Vnx8ZG7c"
     },
     {
         name: "lateral raise",
@@ -163,7 +163,7 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Raise weights out to the sides until arms are parallel to the floor, control the descent.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=3VcKaXpzqRo"
     },
     {
         name: "hammer curl",
@@ -172,7 +172,7 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Keep palms facing each other throughout the movement, curl up with control.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=BRVDS6HVR9Q"
     },
     {
         name: "dumbbell lunges",
@@ -181,18 +181,18 @@ const exercises = [
         type: "compound",
         difficulty: "medium",
         tip: "Hold dumbbells at your sides, step forward into a lunge, and push back to starting position.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=3TM-vVWuLYE"
     },
 
     // Machine Exercises
     {
-        name: "lat pulldown",
+        name: "wide grip lat pulldown",
         primaryMuscles: ["lats", "biceps", "rhomboids"],
         equipment: "machine",
         type: "compound",
         difficulty: "easy",
         tip: "Pull the bar to your upper chest, squeeze your shoulder blades together, and control the weight on the way up.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=O-_EOo6IY3U"
     },
     {
         name: "leg press",
@@ -201,7 +201,7 @@ const exercises = [
         type: "compound",
         difficulty: "easy",
         tip: "Keep your feet shoulder-width apart, lower until knees reach 90 degrees, and drive through your heels.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=p5dCqF7wWUw"
     },
     {
         name: "chest press machine",
@@ -210,7 +210,7 @@ const exercises = [
         type: "compound",
         difficulty: "easy",
         tip: "Keep your back flat against the pad, press handles forward with control, and squeeze your chest.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=EeRz0yzXUvk"
     },
     {
         name: "seated row",
@@ -219,7 +219,7 @@ const exercises = [
         type: "compound",
         difficulty: "easy",
         tip: "Pull handles to your chest, squeeze your shoulder blades together, and maintain good posture.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=Gv_SmIQo794"
     },
     {
         name: "leg extension",
@@ -228,7 +228,7 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Extend your legs against the resistance, squeeze your quads at the top, and control the descent.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=swZQC689o9U"
     },
     {
         name: "leg curl",
@@ -237,7 +237,7 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Curl your heels toward your glutes, squeeze your hamstrings, and control the weight back down.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=t9sTSr-JYSs"
     },
     {
         name: "shoulder press machine",
@@ -246,7 +246,7 @@ const exercises = [
         type: "compound",
         difficulty: "easy",
         tip: "Press handles overhead, keep your core tight, and avoid arching your back excessively.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=uJmYpr_CPBo"
     },
     {
         name: "cable crossover",
@@ -255,16 +255,7 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Bring cables together in front of your chest, squeeze your chest muscles, and control the stretch.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    },
-    {
-        name: "cable row",
-        primaryMuscles: ["lats", "rhomboids", "biceps"],
-        equipment: "machine",
-        type: "compound",
-        difficulty: "easy",
-        tip: "Pull cable to your chest, squeeze your shoulder blades together, and maintain a straight back.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=qRS3cn89gBE"
     },
     {
         name: "cable tricep pushdown",
@@ -273,7 +264,7 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Keep your elbows stationary, push the cable down until arms are fully extended, and control the return.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=-zLyUAo1gMw"
     },
 
     // Bodyweight Exercises
@@ -284,7 +275,7 @@ const exercises = [
         type: "compound",
         difficulty: "easy",
         tip: "Keep your body straight, hands slightly wider than shoulders, and lower until chest nearly touches the floor.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/shorts/_YrJc-kTYA0"
     },
     {
         name: "pull up",
@@ -293,7 +284,7 @@ const exercises = [
         type: "compound",
         difficulty: "hard",
         tip: "Start from a dead hang, pull yourself up until chin clears the bar, and lower with control.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=aAggnpPyR6E"
     },
     {
         name: "lunges",
@@ -302,7 +293,7 @@ const exercises = [
         type: "compound",
         difficulty: "medium",
         tip: "Step forward into a lunge position, keep your front knee over your ankle, and push back to starting position.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=xoZMv_YJtkA"
     },
     {
         name: "plank",
@@ -311,7 +302,7 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Keep your body straight from head to heels, engage your core, and breathe normally while holding the position.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=A2b2EmIg0dA"
     },
     {
         name: "burpees",
@@ -320,7 +311,7 @@ const exercises = [
         type: "compound",
         difficulty: "hard",
         tip: "Start standing, drop to push-up position, do a push-up, jump feet to hands, then jump up with arms overhead.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=qLBImHhCXSw"
     },
     {
         name: "mountain climbers",
@@ -329,7 +320,7 @@ const exercises = [
         type: "compound",
         difficulty: "medium",
         tip: "Start in plank position, alternate bringing knees to chest rapidly while maintaining plank form.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=cnyTQDSE884"
     },
     {
         name: "jumping jacks",
@@ -338,7 +329,7 @@ const exercises = [
         type: "compound",
         difficulty: "easy",
         tip: "Jump feet apart while raising arms overhead, then jump back to starting position.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=-O7z3ilCu-s"
     },
     {
         name: "wall sit",
@@ -347,7 +338,7 @@ const exercises = [
         type: "isolation",
         difficulty: "medium",
         tip: "Slide down wall until thighs are parallel to floor, hold position with back flat against wall.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=-cdph8hv0O0"
     },
     {
         name: "dips",
@@ -356,7 +347,7 @@ const exercises = [
         type: "compound",
         difficulty: "hard",
         tip: "Lower your body by bending elbows, keep chest up, and push back up to starting position.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    youtube: "https://www.youtube.com/watch?v=wjUmnZH528Y"
     },
     {
         name: "pike push up",
@@ -365,16 +356,7 @@ const exercises = [
         type: "compound",
         difficulty: "hard",
         tip: "Start in downward dog position, lower head toward hands, and push back up.",
-    youtube: "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-    },
-    {
-        name: "single leg glute bridge",
-        primaryMuscles: ["glutes", "hamstrings"],
-        equipment: "bodyweight",
-        type: "isolation",
-        difficulty: "medium",
-        tip: "Lift one leg up, drive through the heel of the planted foot, and squeeze your glutes at the top.",
-        youtube: "https://www.youtube.com/shorts/J-Zi-sMb3qA"
+    youtube: "https://www.youtube.com/watch?v=XckEEwa1BPI"
     },
     {
         name: "russian twists",
@@ -383,25 +365,16 @@ const exercises = [
         type: "isolation",
         difficulty: "easy",
         tip: "Sit with knees bent, lean back slightly, and rotate your torso side to side while keeping feet off ground.",
-        youtube: "https://www.youtube.com/shorts/J-Zi-sMb3qA"
+        youtube: "https://www.youtube.com/watch?v=DJQGX2J4IVw"
     },
     {
-        name: "bear crawl",
-        primaryMuscles: ["core", "shoulders", "quadriceps"],
-        equipment: "bodyweight",
-        type: "compound",
-        difficulty: "medium",
-        tip: "Start on hands and knees, lift knees slightly off ground, and crawl forward maintaining this position.",
-        youtube: "https://www.youtube.com/shorts/J-Zi-sMb3qA"
-    },
-    {
-        name: "handstand push up",
+        name: "wall handstand push up",
         primaryMuscles: ["shoulders", "triceps"],
         equipment: "bodyweight",
         type: "compound",
         difficulty: "hard",
         tip: "Start in handstand position against wall, lower head toward ground, and push back up.",
-        youtube: "https://www.youtube.com/shorts/J-Zi-sMb3qA"
+        youtube: "https://www.youtube.com/watch?v=WxgJS48wf1M"
     },
     {
         name: "pistol squat",
@@ -410,7 +383,7 @@ const exercises = [
         type: "compound",
         difficulty: "hard",
         tip: "Stand on one leg, extend other leg forward, and squat down on single leg while keeping extended leg off ground.",
-        youtube: "https://www.youtube.com/shorts/J-Zi-sMb3qA"
+        youtube: "https://www.youtube.com/watch?v=qDcniqddTeE"
     }
 ];
 
