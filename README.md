@@ -22,7 +22,7 @@ This project is an ongoing passion project where I will periodically add new gym
 - Learn about muscles, equipment, and form tips
 - Dynamic browser interface with color-coded similarity indicators
 - Expandable exercise database
-- Currently around 40~ exercises
+- Currently around ~40 exercises
 
 ## How to Play
 1. Open the game in your browser.
