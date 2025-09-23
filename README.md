@@ -38,7 +38,7 @@ This project is an ongoing passion project where I will periodically add new gym
 ## Tech Stack
 - **HTML** – page structure
 - **CSS** – styling and layout
-- **JavaScript** – game logic and dynamic feedback
+- **JavaScript** – exercsie database, game logic and dynamic feedback
 
 ## Contributing
 Contributions are welcome! If you'd like to add more exercises, improve feedback visuals, or enhance gameplay, feel free to submit a pull request.
