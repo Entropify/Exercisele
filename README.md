@@ -6,7 +6,7 @@ Have you ever found learning and memorizing new gym exercises boring and tedious
 Inspired by Countryle, Worldle, Flagle, and Capitale, **Exercisele** is a browser-based educational guessing game where players try to identify gym exercises based on features like primary muscle groups, equipment, exercise type, and difficulty. Each guess provides feedback on how closely it matches the target exercise and which features are guessed incorrectly, helping users learn proper form and key techniques.
 This project is an ongoing passion project where I will periodically add new gym exercises I have personally learned in the gym, as well as new features and UX improvements.
 
-## Update 1.02 (Endless & Daily Mode, Further UX improvements)
+## Update 1.02 (Endless & Daily Mode, Further UX Improvements)
 - Added two mode buttons (Endless / Daily) with glow and an animated sliding indicator; added a short mode description under the intro that updates with mode.
 - Implemented Daily mode:
    - Deterministic daily answer keyed to Eastern Standard Time so all users see the same puzzle each EST day.
