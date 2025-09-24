@@ -215,8 +215,12 @@ header p {
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     border: 1px solid rgba(255,255,255,0.04);
     /* Allow smooth size transitions using max-height (slower for a smooth expand) */
-    max-height: 1200px;
     transition: padding 700ms cubic-bezier(.22,.9,.32,1), max-height 780ms cubic-bezier(.22,.9,.32,1), box-shadow 300ms ease;
+}
+
+/* After expansion, allow the panel to grow naturally with content */
+.game-area:not(.compact) {
+    max-height: none;
 }
 
 .game-area, .tip-section, .guess-item, table.exercise-table {
