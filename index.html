@@ -7,12 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
     <div class="container">
         <header>
-            <a class="exercise-list-link" href="list.html" title="View all exercises">Exercise List</a>
+            <div class="mode-toggle" role="group" aria-label="Game mode">
+                <div id="mode-indicator" class="mode-indicator" aria-hidden="true"></div>
+                <button id="mode-endless" class="mode-btn" type="button">Endless Mode</button>
+                <button id="mode-daily" class="mode-btn" type="button">Daily Mode</button>
+            </div>
+            <div id="mode-info" class="mode-info" aria-live="polite"></div>
             <h1>🏋️ Exercisele</h1>
+            <a class="exercise-list-link" href="list.html" title="View all exercises">Exercise List</a>
             <p>Guess the gym exercise! Get hints about muscle groups, equipment, type and difficulty.</p>
             <p>Learn key information about exercises and improve your fitness knowledge!</p>
+            <p id="mode-description" class="mode-description"></p>
         </header>
 
         <div class="game-area">
@@ -33,7 +41,7 @@
             </div>
 
             <div class="feedback-section">
-                <h3>Your Guesses:</h3>
+                <h3 id="guesses-header" style="display:none;">Your Guesses:</h3>
                 <div id="guesses-container">
                     <!-- Guesses will be dynamically added here -->
                 </div>
@@ -49,6 +57,7 @@
 
             <div class="game-over" id="game-over" style="display: none;">
                 <h3 id="game-result"></h3>
+                <div id="daily-countdown" class="daily-countdown" style="display:none;"></div>
                 <button id="new-game-btn">New Game</button>
             </div>
         </div>

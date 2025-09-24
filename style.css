@@ -13,11 +13,31 @@ body {
     flex-direction: column;
 }
 
+/* Background canvas full-screen */
+#bg-canvas {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
+
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     flex: 1 0 auto;
+}
+
+/* Acrylic panel look: used for game-area, tip-section, guess-items, and table */
+.acrylic {
+    background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    border: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+    border-radius: 12px;
 }
 
 .container.wide {
@@ -35,6 +55,71 @@ header {
     color: #ffffff;
 }
 
+.mode-toggle {
+    position: relative;
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin: 8px 0 12px;
+    border: 2px solid #4ecdc4;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(78,205,196,0.08);
+}
+
+.mode-btn {
+    padding: 10px 14px;
+    background: transparent;
+    color: #4ecdc4;
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    position: relative;
+    z-index: 2;
+    transition: color 0.25s ease, transform 0.15s ease;
+    text-shadow: 0 0 6px rgba(78,205,196,0.5);
+}
+
+.mode-btn.active {
+    color: #1a1a2e;
+    text-shadow: none;
+}
+
+.mode-btn:hover {
+    transform: translateY(-1px);
+}
+
+.mode-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(135deg, #4ecdc4, #45b7d1);
+    box-shadow: 0 0 18px rgba(78,205,196,0.6), 0 0 36px rgba(69,183,209,0.4);
+    border-radius: 8px;
+    transform: translateX(0%);
+    transition: transform 0.25s ease;
+    z-index: 1;
+}
+
+.mode-toggle.shift-daily .mode-indicator {
+    transform: translateX(100%);
+}
+
+.mode-description {
+    margin-top: 8px;
+    color: #b0f7ef;
+    font-weight: 600;
+}
+
+.mode-info {
+    margin-top: 6px;
+    color: #b0f7ef;
+    font-weight: 600;
+}
+
+/* Default (desktop/tablet): keep the control in the top-right */
 .exercise-list-link {
     position: absolute;
     top: 16px;
@@ -102,13 +187,19 @@ header h1 {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: gradientShift 3s ease infinite;
+    text-shadow: 0 0 10px rgba(78,205,196,0.45), 0 0 20px rgba(69,183,209,0.35);
+    animation: gradientShift 3s ease infinite, titleGlow 2.6s ease-in-out infinite alternate;
 }
 
 @keyframes gradientShift {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+
+@keyframes titleGlow {
+    0%   { text-shadow: 0 0 8px rgba(78,205,196,0.35), 0 0 16px rgba(69,183,209,0.25); }
+    100% { text-shadow: 0 0 14px rgba(78,205,196,0.6), 0 0 28px rgba(69,183,209,0.45); }
 }
 
 header p {
@@ -118,11 +209,56 @@ header p {
 }
 
 .game-area {
-    background: linear-gradient(145deg, #2d2d44, #3a3a5c);
+    background: linear-gradient(145deg, rgba(20,26,40,0.6), rgba(30,36,56,0.45));
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    border: 1px solid #4a4a6a;
+    border: 1px solid rgba(255,255,255,0.04);
+    /* Allow smooth size transitions using max-height (slower for a smooth expand) */
+    max-height: 1200px;
+    transition: padding 700ms cubic-bezier(.22,.9,.32,1), max-height 780ms cubic-bezier(.22,.9,.32,1), box-shadow 300ms ease;
+}
+
+.game-area, .tip-section, .guess-item, table.exercise-table {
+    /* add acrylic visuals */
+    background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+    backdrop-filter: blur(8px) saturate(120%);
+    -webkit-backdrop-filter: blur(8px) saturate(120%);
+    border: 1px solid rgba(255,255,255,0.04);
+/* end block above */
+
+/* Compact layout for when no guesses are present: smaller box and vertical centering */
+.game-area.compact {
+    /* Compact: small max-height so collapsed state animates from/to this size */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    max-height: 120px; /* small value to create ~20px spacing above/below input */
+    /* allow dropdowns to overflow the compact container so suggestions aren't clipped */
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Remove extra spacing inside compact mode so top and bottom distances match */
+.game-area.compact .input-section {
+    margin: 0; /* override default bottom margin */
+}
+
+.game-area.compact .input-group label {
+    margin-bottom: 0; /* reduce label spacing for visual balance */
+}
+
+.game-area.compact #exercise-input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* Animate input padding so the input visually moves smoothly */
+#exercise-input {
+    transition: padding 300ms ease, box-shadow 200ms ease, border-color 200ms ease;
 }
 
 /* Controls for list page */
@@ -280,7 +416,8 @@ header p {
     border-radius: 0 0 8px 8px;
     max-height: 200px;
     overflow-y: auto;
-    z-index: 1000;
+    z-index: 9999; /* ensure suggestions render above the game box */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
     display: none;
 }
 
@@ -351,6 +488,10 @@ header p {
     border-left: 4px solid #4ecdc4;
     transition: transform 0.2s ease;
     border: 1px solid #4a4a6a;
+}
+
+.guesses-container {
+    transition: opacity 520ms ease, transform 620ms cubic-bezier(.22,.9,.32,1);
 }
 
 .guess-item:hover {
@@ -460,6 +601,12 @@ header p {
     margin-bottom: 20px;
 }
 
+.daily-countdown {
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #1a1a2e;
+}
+
 #new-game-btn {
     padding: 12px 30px;
     background: #1a1a2e;
@@ -514,6 +661,16 @@ header p {
         font-size: 2rem;
     }
     
+    /* Ensure header has room for the link under the title */
+    header {
+        padding-top: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        position: relative;
+    }
+    
     .input-group {
         flex-direction: column;
         align-items: stretch;
@@ -521,5 +678,55 @@ header p {
     
     .feedback-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Make the back/exercise list link more prominent and easier to tap on mobile */
+    .exercise-list-link {
+        position: static !important;
+        display: block;
+        width: auto;
+        margin: 0 auto 12px auto;
+        padding: 12px 16px;
+        font-size: 16px;
+        border-radius: 8px;
+        transform: none !important;
+        box-shadow: none;
+        z-index: 2;
+        text-align: center;
+    }
+
+    /* place title first, mode-toggle next, then the link below the title */
+    header h1 { order: 1; }
+    .mode-toggle { order: 2; }
+    .exercise-list-link { order: 3; }
+
+    /* Ensure hover/active transforms don't move the link on small screens */
+    .exercise-list-link:hover {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Make table responsive: allow horizontal scroll and slightly reduce font size for fitting */
+    .table-wrapper {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table.exercise-table td, table.exercise-table th {
+        padding: 8px;
+        font-size: 13px;
+    }
+
+    /* Responsive stacked table rows for narrow screens: show data-labels */
+    table.exercise-table thead { display: none; }
+    table.exercise-table, table.exercise-table tbody, table.exercise-table tr, table.exercise-table td { display: block; width: 100%; }
+    table.exercise-table tr { margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.03); padding-bottom: 8px; }
+    table.exercise-table td { padding: 6px 8px; text-align: left; }
+    table.exercise-table td::before { content: attr(data-label) ": "; font-weight: 700; color: #4ecdc4; display: inline-block; width: 120px; }
+
+    /* Increase tap target for buttons */
+    #search-options-btn, #new-game-btn, #guess-btn {
+        padding: 12px 18px;
+        font-size: 16px;
     }
 }

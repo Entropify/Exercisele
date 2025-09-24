@@ -112,7 +112,7 @@ const exercises = [
     youtube: "https://www.youtube.com/watch?v=Did01dFR3Lk"
     },
     {
-        name: "chest fly",
+        name: "dumbbell chest fly",
         primaryMuscles: ["chest"],
         equipment: "dumbbell",
         type: "isolation",
@@ -403,14 +403,114 @@ let guessedNames = new Set();
 const exerciseInput = document.getElementById('exercise-input');
 const autocompleteDropdown = document.getElementById('autocomplete-dropdown');
 const guessBtn = document.getElementById('guess-btn');
+const inputSection = document.querySelector('.input-section');
+const attemptsCounter = document.querySelector('.attempts-counter');
 const attemptsDisplay = document.getElementById('attempts');
 const guessesContainer = document.getElementById('guesses-container');
+const guessesHeader = document.getElementById('guesses-header');
 const tipSection = document.getElementById('tip-section');
 const tipText = document.getElementById('tip-text');
 const tipVideoLink = document.getElementById('tip-video-link');
 const gameOverSection = document.getElementById('game-over');
 const gameResult = document.getElementById('game-result');
 const newGameBtn = document.getElementById('new-game-btn');
+const modeInfo = document.getElementById('mode-info');
+const dailyCountdownEl = document.getElementById('daily-countdown');
+const modeIndicator = document.getElementById('mode-indicator');
+const modeDescription = document.getElementById('mode-description');
+// Mode toggle buttons (only present on index page)
+const modeEndlessBtn = document.getElementById('mode-endless');
+const modeDailyBtn = document.getElementById('mode-daily');
+const gameArea = document.querySelector('.game-area');
+
+// Game mode state: 'endless' (default) or 'daily'
+let currentMode = (typeof localStorage !== 'undefined' && localStorage.getItem('exerciseleMode')) || 'endless';
+let countdownTimer = null;
+const DAILY_STORAGE_KEY = 'exerciseleDailyState';
+
+function loadDailyState() {
+    try {
+        const raw = localStorage.getItem(DAILY_STORAGE_KEY);
+        if (!raw) return null;
+        return JSON.parse(raw);
+    } catch (e) { return null; }
+}
+
+function saveDailyState(state) {
+    try {
+        localStorage.setItem(DAILY_STORAGE_KEY, JSON.stringify(state));
+    } catch (e) {}
+}
+
+function clearDailyState() {
+    try { localStorage.removeItem(DAILY_STORAGE_KEY); } catch (e) {}
+}
+
+function getEtNow() {
+    return new Date(new Date().toLocaleString('en-US', { timeZone: 'America/New_York' }));
+}
+
+function getEtDayNumber() {
+    const nowET = getEtNow();
+    // Use UTC-based day index for stability, derived from ET calendar date
+    return Math.floor(Date.UTC(nowET.getFullYear(), nowET.getMonth(), nowET.getDate()) / 86400000);
+}
+
+function getDailyIndex() {
+    const n = getEtDayNumber();
+    if (!Array.isArray(exercises) || exercises.length === 0) return 0;
+    return n % exercises.length;
+}
+
+function pickTargetExercise() {
+    if (!Array.isArray(exercises) || exercises.length === 0) return null;
+    if (currentMode === 'daily') {
+        return exercises[getDailyIndex()];
+    }
+    return exercises[Math.floor(Math.random() * exercises.length)];
+}
+
+function updateModeButtons() {
+    if (modeEndlessBtn) modeEndlessBtn.classList.toggle('active', currentMode === 'endless');
+    if (modeDailyBtn) modeDailyBtn.classList.toggle('active', currentMode === 'daily');
+    const toggle = document.querySelector('.mode-toggle');
+    if (toggle) toggle.classList.toggle('shift-daily', currentMode === 'daily');
+    if (modeDescription) {
+        modeDescription.textContent = currentMode === 'daily'
+            ? 'Daily Mode: One puzzle per day. Answer refreshes at midnight (Eastern Standard Time).'
+            : 'Endless Mode: Play as many rounds as you like with random answers.';
+    }
+}
+
+function setMode(mode) {
+    if (mode !== 'endless' && mode !== 'daily') return;
+    currentMode = mode;
+    try { localStorage.setItem('exerciseleMode', mode); } catch (e) {}
+    updateModeButtons();
+    initGame();
+}
+
+function formatHMS(ms) {
+    const totalSec = Math.max(0, Math.floor(ms / 1000));
+    const h = Math.floor(totalSec / 3600).toString().padStart(2, '0');
+    const m = Math.floor((totalSec % 3600) / 60).toString().padStart(2, '0');
+    const s = (totalSec % 60).toString().padStart(2, '0');
+    return `${h}:${m}:${s}`;
+}
+
+function startDailyCountdown(targetEl) {
+    if (!targetEl) return;
+    if (countdownTimer) clearInterval(countdownTimer);
+    targetEl.style.display = 'block';
+    const tick = () => {
+        const nowET = getEtNow();
+        const nextEtMidnight = new Date(nowET.getFullYear(), nowET.getMonth(), nowET.getDate() + 1, 0, 0, 0, 0);
+        const remaining = nextEtMidnight.getTime() - nowET.getTime();
+        targetEl.textContent = `Next puzzle in ${formatHMS(remaining)}`;
+    };
+    tick();
+    countdownTimer = setInterval(tick, 1000);
+}
 
 // Autocomplete functionality
 let currentSuggestions = [];
@@ -465,11 +565,91 @@ function initGame() {
         return;
     }
     
-    targetExercise = exercises[Math.floor(Math.random() * exercises.length)];
+    // If daily mode and we have a saved finished state for today, restore it and don't prompt
+    const dailyState = currentMode === 'daily' ? loadDailyState() : null;
+    const todayDay = getEtDayNumber();
+    if (dailyState && dailyState.day === todayDay) {
+        // If the daily game was finished, restore finished view
+        if (dailyState.finished) {
+            targetExercise = pickTargetExercise();
+            attempts = (typeof dailyState.attempts === 'number' && dailyState.attempts >= 0)
+                ? dailyState.attempts
+                : (dailyState.guesses || []).length || 0;
+            gameOver = true;
+            guessedNames = new Set((dailyState.guesses || []).map(g => g.toLowerCase()));
+            guessesContainer.innerHTML = '';
+            // Recreate guess elements if possible
+            (dailyState.guesses || []).forEach(gName => {
+                const ex = findExercise(gName) || { name: gName, primaryMuscles: [], equipment: '', type: '', difficulty: '', tip: '', youtube: '' };
+                const el = createGuessElement(ex);
+                guessesContainer.appendChild(el);
+            });
+            if (guessesHeader) guessesHeader.style.display = guessesContainer.children.length > 0 ? '' : 'none';
+            tipText.textContent = targetExercise.tip;
+            tipSection.style.display = 'block';
+            if (tipVideoLink) {
+                const url = (targetExercise.youtube || '').trim();
+                tipVideoLink.style.display = url ? 'inline' : 'none';
+                if (url) tipVideoLink.href = url;
+            }
+            // Update attempts display so saved attempts persist
+            updateAttemptsDisplay();
+            // Show game result from state (or compute)
+            if (dailyState.won) {
+                gameResult.textContent = `Congratulations! You guessed it in ${attempts} attempt${attempts === 1 ? '' : 's'}!`;
+            } else {
+                gameResult.textContent = `Game Over! The exercise was: ${targetExercise.name}`;
+            }
+            gameOverSection.style.display = 'block';
+            if (inputSection) inputSection.style.display = 'none';
+            exerciseInput.disabled = true;
+            guessBtn.disabled = true;
+            if (newGameBtn) newGameBtn.style.display = 'none';
+            if (dailyCountdownEl) startDailyCountdown(dailyCountdownEl);
+                updateCompactLayout();
+            return;
+        }
+
+        // If there's an in-progress daily game for today, restore guesses and attempts
+        if (!dailyState.finished) {
+            targetExercise = pickTargetExercise();
+            attempts = (typeof dailyState.attempts === 'number' && dailyState.attempts >= 0)
+                ? dailyState.attempts
+                : (dailyState.guesses || []).length || 0;
+            gameOver = false;
+            guessedNames = new Set((dailyState.guesses || []).map(g => g.toLowerCase()));
+            guessesContainer.innerHTML = '';
+            (dailyState.guesses || []).forEach(gName => {
+                const ex = findExercise(gName) || { name: gName, primaryMuscles: [], equipment: '', type: '', difficulty: '', tip: '', youtube: '' };
+                const el = createGuessElement(ex);
+                guessesContainer.appendChild(el);
+            });
+            if (guessesHeader) guessesHeader.style.display = guessesContainer.children.length > 0 ? '' : 'none';
+            tipSection.style.display = 'none';
+            if (tipVideoLink) {
+                tipVideoLink.style.display = 'none';
+                tipVideoLink.href = '#';
+            }
+            gameOverSection.style.display = 'none';
+            exerciseInput.disabled = false;
+            guessBtn.disabled = false;
+            if (newGameBtn) newGameBtn.style.display = 'none';
+            if (dailyCountdownEl) { dailyCountdownEl.style.display = 'none'; dailyCountdownEl.textContent = ''; }
+            if (inputSection) inputSection.style.display = '';
+            updateAttemptsDisplay();
+            return;
+        }
+    }
+
+    // Fresh game flow
+    targetExercise = pickTargetExercise();
     attempts = 0;
     gameOver = false;
     guessedNames = new Set();
     guessesContainer.innerHTML = '';
+    // Toggle compact layout when no guesses exist
+    updateCompactLayout();
+    if (guessesHeader) guessesHeader.style.display = 'none';
     tipSection.style.display = 'none';
     if (tipVideoLink) {
         tipVideoLink.style.display = 'none';
@@ -479,14 +659,43 @@ function initGame() {
     exerciseInput.value = '';
     exerciseInput.disabled = false;
     guessBtn.disabled = false;
+    if (inputSection) inputSection.style.display = '';
+    // Hide New Game in daily mode; show in endless
+    if (newGameBtn) newGameBtn.style.display = currentMode === 'daily' ? 'none' : 'inline-block';
+    // Hide any header mode info and reset countdown placeholder
+    if (modeInfo) modeInfo.textContent = '';
+    if (dailyCountdownEl) {
+        dailyCountdownEl.style.display = 'none';
+        dailyCountdownEl.textContent = '';
+    }
+    if (countdownTimer) { clearInterval(countdownTimer); countdownTimer = null; }
     autocompleteDropdown.style.display = 'none';
     updateAttemptsDisplay();
     console.log('Target exercise:', targetExercise.name); // For debugging
 }
 
+function updateCompactLayout() {
+    if (!gameArea || !guessesContainer) return;
+    const hasGuesses = guessesContainer.children.length > 0;
+    // Apply compact style only when there are no guesses and game is not over
+    if (!hasGuesses && !gameOver) {
+        gameArea.classList.add('compact');
+    } else {
+        gameArea.classList.remove('compact');
+    }
+}
+
 // Update attempts display
 function updateAttemptsDisplay() {
-    attemptsDisplay.textContent = attempts;
+    if (attemptsDisplay) attemptsDisplay.textContent = attempts;
+    // Hide attempts counter in Endless mode until the user has made their first guess
+    if (attemptsCounter) {
+        if (currentMode === 'endless' && attempts === 0) {
+            attemptsCounter.style.display = 'none';
+        } else {
+            attemptsCounter.style.display = '';
+        }
+    }
 }
 
 // Find exercise by name (case-insensitive)
@@ -699,10 +908,24 @@ function handleGuess() {
     // Add guess to container
     const guessElement = createGuessElement(guessExercise);
     guessesContainer.appendChild(guessElement);
+    if (guessesHeader && guessesContainer.children.length > 0) {
+        guessesHeader.style.display = '';
+    }
+    updateCompactLayout();
+    // Add guessed name and increment attempts
     guessedNames.add(normalized);
-    
     attempts++;
     updateAttemptsDisplay();
+
+    // Persist guess if in daily mode (save after increment so attempts matches displayed value)
+    if (currentMode === 'daily') {
+        const existing = loadDailyState() || { day: getEtDayNumber(), guesses: [], attempts: 0, finished: false };
+        existing.guesses = existing.guesses || [];
+        existing.guesses.push(guessExercise.name);
+        existing.attempts = attempts;
+        existing.finished = false;
+        saveDailyState(existing);
+    }
     
     // Check if correct
     if (guessExercise.name.toLowerCase() === targetExercise.name.toLowerCase()) {
@@ -716,8 +939,16 @@ function handleGuess() {
         }
         gameResult.textContent = `Congratulations! You guessed it in ${attempts} attempt${attempts === 1 ? '' : 's'}!`;
         gameOverSection.style.display = 'block';
-        exerciseInput.disabled = true;
-        guessBtn.disabled = true;
+            if (inputSection) inputSection.style.display = 'none';
+            exerciseInput.disabled = true;
+            guessBtn.disabled = true;
+        if (currentMode === 'daily') {
+            saveDailyState({ day: getEtDayNumber(), guesses: Array.from(guessedNames), attempts, finished: true, won: true });
+        }
+        if (currentMode === 'daily' && dailyCountdownEl) {
+            startDailyCountdown(dailyCountdownEl);
+        }
+        updateCompactLayout();
     } else if (attempts >= maxAttempts) {
         gameOver = true;
         tipText.textContent = targetExercise.tip;
@@ -731,6 +962,13 @@ function handleGuess() {
         gameOverSection.style.display = 'block';
         exerciseInput.disabled = true;
         guessBtn.disabled = true;
+        if (currentMode === 'daily') {
+            saveDailyState({ day: getEtDayNumber(), guesses: Array.from(guessedNames), attempts, finished: true, won: false });
+        }
+        if (currentMode === 'daily' && dailyCountdownEl) {
+            startDailyCountdown(dailyCountdownEl);
+        }
+        updateCompactLayout();
     }
     
     exerciseInput.value = '';
@@ -807,10 +1045,15 @@ if (newGameBtn) {
     newGameBtn.addEventListener('click', initGame);
 }
 
+// Mode button listeners
+if (modeEndlessBtn) modeEndlessBtn.addEventListener('click', () => setMode('endless'));
+if (modeDailyBtn) modeDailyBtn.addEventListener('click', () => setMode('daily'));
+
 // Initialize only on pages with game UI
 if (typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', () => {
         if (exerciseInput && guessBtn && attemptsDisplay && guessesContainer) {
+            updateModeButtons();
             initGame();
         }
     });
