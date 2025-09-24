@@ -37,7 +37,7 @@ Made by Zhiyuan (Jerry) Jiang.
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
-# Updates
+# Update Logs Below
 
 ## Update 1.02 (Endless & Daily Mode, Further UX Improvements)
 - Added two mode buttons (Endless / Daily) with glow and an animated sliding indicator; added a short mode description under the intro that updates with mode.
