@@ -49,7 +49,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 - UX / UI Improvements
    - Smooth expand / collapse animations for the box (slower, eased transitions on padding and max-height) and animated reveal for guesses.
-   - Applied an acrylic “liquid glass” look to panels (game-area, tip-section, guess-items, table) and added soft neon glow to the Exercisele title.
+   - Applied an acrylic “liquid glass” look (Apple sucks but iOS 26 does look really good I'll give them that) to panels (game-area, tip-section, guess-items, table) and added soft neon glow to the Exercisele title.
    - Improved visuals: glow on mode buttons, subtle pulsing title glow, animated mode indicator.
 
 - Mobile compatibility is still in progress; button-text overlap may persist on certain resolutions mobile devices.
